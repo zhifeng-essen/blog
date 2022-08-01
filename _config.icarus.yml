@@ -109,7 +109,6 @@ navbar:
         Archives: /archives
         Categories: /categories
         Tags: /tags
-        About: /about
     # Links to be shown on the right of the navigation bar
     links:
         Download on GitHub:
@@ -179,7 +178,7 @@ sidebar:
     # Right sidebar configurations
     right:
         # Whether the sidebar sticks to the top when page scrolls
-        sticky: false
+        sticky: true
 # Sidebar widget configurations
 # http://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
 widgets:
@@ -193,7 +192,7 @@ widgets:
         # Author title
         author_title: 
         # Author's current location
-        location: 
+        location: Shanghai, China
         # URL or path to the avatar image
         avatar: /img/forest.jpg
         # Whether show the rounded avatar image
@@ -213,17 +212,6 @@ widgets:
             RSS:
                 icon: fas fa-rss
                 url: /atom.xml
-    # Table of contents widget configurations
-    -
-        # Where should the widget be placed, left sidebar or right sidebar
-        position: left
-        type: toc
-        # Whether to show the index of each heading
-        index: true
-        # Whether to collapse sub-headings when they are out-of-view
-        collapsed: true
-        # Maximum level of headings to show (1-6)
-        depth: 3
     # Follow.it email subscription widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
