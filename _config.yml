@@ -6,14 +6,14 @@
 title: zhifeng-essen's blog
 subtitle: zhifeng-essen's blog
 description: zhifeng-essen's blog
-keywords: blog
+keywords: blog, hexo
 author: zhifeng-essen
 language: en
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zhifeng.games
+url: https://www.zhifeng.games
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
