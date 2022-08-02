@@ -10,6 +10,10 @@ categories:
 toc: true
 ---
 
+VS Code + Docker 搭建编译 chibicc 所需的 64 位 Linux 环境
+
+<!-- more -->
+
 ## 下载 chibicc 源码
 
 ```shell
