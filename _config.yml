@@ -88,7 +88,7 @@ feed:
   path: atom.xml
   limit: 0
   hub:
-  content: true
+  content: false
   content_limit_delim: ' '
   order_by: -date
   icon: /img/logo.png
