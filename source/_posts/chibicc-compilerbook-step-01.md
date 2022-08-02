@@ -15,7 +15,7 @@ C 语言最简单的子集
 
 ## 编译器主体
 
-```c
+```c main.c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 
 ## 自动化测试
 
-```shell
+```shell test.sh
 #!/bin/bash
 assert() {
   expected="$1"
@@ -63,7 +63,7 @@ echo OK
 
 ## 编写 Makefile
 
-```makefile
+```makefile Makefile
 CFLAGS=-std=c11 -g -static
 
 chibicc: main.o
@@ -80,9 +80,7 @@ clean:
 
 ## 使用 git 进行版本控制
 
-.gitignore
-
-```
+```gitignore .gitignore
 *~
 *.o
 tmp*
@@ -134,7 +132,7 @@ index 0000000..68e72e6
 
 Check out the github guide to [generating SSH keys](https://docs.github.com/articles/generating-an-ssh-key/) or troubleshoot [common SSH problems](https://docs.github.com/ssh-issues/).
 
-```
+```shell
 $ git remote add origin git@github.com:zhifeng-essen/chibicc.git
 $ git branch -M main
 $ git push -u origin main
@@ -146,6 +144,6 @@ $ git push -u origin main
 
 参考实现：
 
-- [6a43fd2529abfa6c](https://github.com/zhifeng-essen/chibicc/commit/6a43fd2529abfa6c2ebd6d53fd0c54c39c312f12): 创建一个编译单个整数的编译器
+- [6a43fd2](https://github.com/zhifeng-essen/chibicc/commit/6a43fd2529abfa6c2ebd6d53fd0c54c39c312f12): 创建一个编译单个整数的编译器
 
-- [f722daaaae060611](https://github.com/rui314/chibicc/commit/f722daaaae0606115df4ace5a852da23c1a5b0f3): Compile an integer to an exectuable that exits with the given number
+- [f722daa](https://github.com/rui314/chibicc/commit/f722daaaae0606115df4ace5a852da23c1a5b0f3): Compile an integer to an exectuable that exits with the given number
