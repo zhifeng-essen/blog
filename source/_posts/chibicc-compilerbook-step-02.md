@@ -9,7 +9,7 @@ categories:
 toc: true
 ---
 
-扩展[上一步](/posts/chibicc-compilerbook-step-01)中创建的编译器，以接受像 2+11 和 5+20-4 这样的涉及加减法的表达式，而不仅仅是单个整数。
+扩展[上一步](/posts/chibicc-compilerbook-step-01)中创建的编译器，以接受像 `2+11` 和 `5+20-4` 这样的涉及加减法的表达式，而不仅仅是单个整数。
 
 <!-- more -->
 
@@ -71,9 +71,12 @@ assert 42 42
 
 ## 小结
 
+{% raw %}<article class="message is-info"><div class="message-body">{% endraw %}
+
 参考实现：
 
 - [c21978c](https://github.com/zhifeng-essen/chibicc/commit/c21978c77c3b921febebee7642bcb63d74edcd07): 实现加减法
 
 - [afc9e8f](https://github.com/rui314/chibicc/commit/afc9e8f05faddf051aa3a578520d6484ab451282): Add + and - operators
 
+{% raw %}</div></article>{% endraw %}

@@ -16,7 +16,7 @@ VS Code + Docker 搭建编译 chibicc 所需的 64 位 Linux 环境
 
 ## 下载 chibicc 源码
 
-```shell
+```bash
 $ cd ~/Code
 $ git clone https://github.com/rui314/chibicc.git
 ```
@@ -25,7 +25,7 @@ $ git clone https://github.com/rui314/chibicc.git
 
 选择 ubuntu:18.04 镜像
 
-```shell
+```bash
 $ docker pull ubuntu:18.04
 18.04: Pulling from library/ubuntu
 Digest: sha256:478caf1bec1afd54a58435ec681c8755883b7eb843a8630091890130b15a79af
@@ -35,7 +35,7 @@ docker.io/library/ubuntu:18.04
 
 启动一个容器，并保持其在后台运行
 
-```shell
+```bash
 $ docker run -itd -v ~/Code/chibicc:/chibicc ubuntu:18.04 bash
 ```
 
@@ -53,7 +53,7 @@ VS Code 安装 Remote Development 插件
 
 安装构建依赖
 
-```shell
+```bash
 $ apt update
 $ apt install -y gcc make git binutils libc6-dev gdb
 ```
@@ -62,14 +62,14 @@ $ apt install -y gcc make git binutils libc6-dev gdb
 
 ## 编译 chibicc
 
-```shell
+```bash
 $ make 
 $ make test-all
 ```
 
 ## 测试
 
-```c
+```c hello.c
 #include <stdio.h>
 
 int main() {

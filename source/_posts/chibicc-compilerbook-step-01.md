@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 
 ## 自动化测试
 
-```shell test.sh
+```bash test.sh
 #!/bin/bash
 assert() {
   expected="$1"
@@ -88,23 +88,23 @@ a.out
 9cc
 ```
 
-```shell
+```bash
 $ git config --global user.name "zhifeng-essen"
 $ git config --global user.email "zhifeng-essen@icloud.com"
 ```
 
-```shell
+```bash
 $ git init
 $ git add main.c test.sh Makefile .gitignore
 ```
 
-```shell
+```bash
 $ git commit -m "创建一个编译单个整数的编译器"
 ```
 
 通过运行 `git log -p` 来检查提交是否成功
 
-```shell
+```bash
 $ git log -p
 commit 6a43fd2529abfa6c2ebd6d53fd0c54c39c312f12 (HEAD -> master)
 Author: zhifeng-essen <zhifeng-essen@icloud.com>
@@ -132,7 +132,7 @@ index 0000000..68e72e6
 
 Check out the github guide to [generating SSH keys](https://docs.github.com/articles/generating-an-ssh-key/) or troubleshoot [common SSH problems](https://docs.github.com/ssh-issues/).
 
-```shell
+```bash
 $ git remote add origin git@github.com:zhifeng-essen/chibicc.git
 $ git branch -M main
 $ git push -u origin main
@@ -142,8 +142,12 @@ $ git push -u origin main
 
 这样就完成了创建编译器的第一步。虽然这一步我们实现的编译器是一个过于简单而很难称之为编译器的程序，但它是一个包含编译器所需的所有元素的好程序。从现在开始，我们将渐进地增强这个编译器，不管你信不信，它会成长为一个优秀的 C 编译器。
 
+{% raw %}<article class="message is-info"><div class="message-body">{% endraw %}
+
 参考实现：
 
 - [6a43fd2](https://github.com/zhifeng-essen/chibicc/commit/6a43fd2529abfa6c2ebd6d53fd0c54c39c312f12): 创建一个编译单个整数的编译器
 
 - [f722daa](https://github.com/rui314/chibicc/commit/f722daaaae0606115df4ace5a852da23c1a5b0f3): Compile an integer to an exectuable that exits with the given number
+
+{% raw %}</div></article>{% endraw %}
