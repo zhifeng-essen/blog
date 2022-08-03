@@ -1,0 +1,113 @@
+atom      ::= identifier | literal | enclosure
+enclosure ::= parenth_form | list_display | dict_display
+
+literal ::= integer | floatnumber
+
+parenth_form ::= "(" [expression_list] ")"
+
+list_display       ::= "[" [expression_list | list_comprehension] "]"
+list_comprehension ::= assignment_expression comp_for
+
+dict_display       ::= "{" [key_datum_list | dict_comprehension] "}"
+key_datum_list     ::= key_datum ("," key_datum)* [","]
+key_datum          ::= expression ":" expression
+dict_comprehension ::= key_datum comp_for
+
+comp_for           ::= "for" target_list "in" or_test [comp_iter]
+comp_iter          ::= comp_for | comp_if
+comp_if            ::= "if" or_test [comp_iter]
+
+primary ::= atom | attributeref | subscription | slicing | call
+
+attributeref ::= primary "." identifier
+
+subscription ::= primary "[" expression_list "]"
+
+slicing      ::= primary "[" slice_list "]"
+slice_list   ::= slice_item ("," slice_item)* [","]
+slice_item   ::= expression | proper_slice
+proper_slice ::= [expression] ":" [expression] [ ":" [expression] ]
+
+call                 ::= primary "(" [positional_arguments] ")"
+positional_arguments ::= positional_item ("," positional_item)*
+positional_item      ::= assignment_expression | "*" expression
+
+power ::= primary ["**" u_expr]
+
+u_expr ::= power | "-" power | "+" power | "~" power
+
+m_expr ::= u_expr | m_expr "*" u_expr | m_expr "@" m_expr | m_expr "//" u_expr | m_expr "/" u_expr | m_expr "%" u_expr
+a_expr ::= m_expr | a_expr "+" m_expr | a_expr "-" m_expr
+
+shift_expr ::= a_expr | shift_expr ( "<<" | ">>" ) a_expr
+
+and_expr ::= shift_expr | and_expr "&" shift_expr
+xor_expr ::= and_expr | xor_expr "^" and_expr
+or_expr  ::= xor_expr | or_expr "|" xor_expr
+
+comparison    ::= or_expr (comp_operator or_expr)*
+comp_operator ::= "<" | ">" | "==" | ">=" | "<=" | "!=" | ["not"] "in"
+
+or_test  ::= and_test | or_test "or" and_test
+and_test ::= not_test | and_test "and" not_test
+not_test ::= comparison | "not" not_test
+
+assignment_expression ::= [identifier ":="] expression
+
+conditional_expression ::= or_test ["if" or_test "else" expression]
+expression             ::= conditional_expression
+
+static_expression ::= "ti.static(" positional_arguments ")"
+
+expression_list ::= expression ("," expression)* [","]
+
+simple_stmt ::= expression_stmt
+                | assert_stmt
+                | assignment_stmt
+                | augmented_assignment_stmt
+                | annotated_assignment_stmt
+                | pass_stmt
+                | return_stmt
+                | break_stmt
+                | continue_stmt
+
+expression_stmt    ::= expression_list
+
+assignment_stmt ::= (target_list "=")+ expression_list
+target_list     ::= target ("," target)* [","]
+target          ::= identifier
+                    | "(" [target_list] ")"
+                    | "[" [target_list] "]"
+                    | attributeref
+                    | subscription
+
+augmented_assignment_stmt ::= augtarget augop expression_list
+augtarget                 ::= identifier | attributeref | subscription
+augop                     ::= "+=" | "-=" | "*=" | "/=" | "//=" | "%=" |
+                              "**="| ">>=" | "<<=" | "&=" | "^=" | "|="
+
+annotated_assignment_stmt ::= identifier ":" expression "=" expression
+
+assert_stmt ::= "assert" expression ["," expression]
+
+pass_stmt ::= "pass"
+
+return_stmt ::= "return" [expression_list]
+
+break_stmt ::= "break"
+
+continue_stmt ::= "continue"
+
+compound_stmt ::= if_stmt | while_stmt | for_stmt
+suite         ::= stmt_list NEWLINE | NEWLINE INDENT statement+ DEDENT
+statement     ::= stmt_list NEWLINE | compound_stmt
+stmt_list     ::= simple_stmt (";" simple_stmt)* [";"]
+
+if_stmt ::= "if" (static_expression | assignment_expression) ":" suite
+            ("elif" (static_expression | assignment_expression) ":" suite)*
+            ["else" ":" suite]
+
+while_stmt ::= "while" assignment_expression ":" suite
+
+for_stmt        ::= "for" target_list "in" iter_expression ":" suite
+iter_expression ::= static_expression | expression
