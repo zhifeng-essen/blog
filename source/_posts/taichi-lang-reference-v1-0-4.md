@@ -14,9 +14,9 @@ categories:
 
 ## 简介
 
-Taichi 是一种嵌入在 Python 中的领域特定语言（DSL）。[kernel 与函数](https://docs.taichi-lang.org/zh-Hans/docs/syntax)明确定义了 Taichi 语言和 Python 语言的界限——Taichi 范围内的代码被视为前者，而 Python 范围内的代码被视为后者。需要强调的是，这篇文章是关于Taichi 编程语言的。
+Taichi 是一种嵌入在 Python 中的领域特定语言（DSL）。[kernel 与函数](https://docs.taichi-lang.org/zh-Hans/docs/syntax)明确定义了 Taichi 语言和 Python 语言的界限——Taichi 范围内的代码被视为前者，而 Python 范围内的代码被视为后者。需要强调的是，这篇文章是关于 Taichi 编程语言的。
 
-也就是说，因为 Taichi 嵌入在 Python 中，所以 Taichi 的语法是 Python 的一个子集。简单起见，本文以 [Python 语言参考](https://docs.python.org/3/reference/)为蓝本。[记号](https://docs.python.org/3/reference/introduction.html#notation) 和[词法分析](https://docs.python.org/3/reference/lexical_analysis.html)部分完全沿袭 Python。
+也就是说，因为 Taichi 嵌入在 Python 中，所以 Taichi 的语法是 Python 语法的一个子集。简单起见，本文以 [Python 语言参考](https://docs.python.org/3/reference/)为蓝本。[记号](https://docs.python.org/3/reference/introduction.html#notation) 和[词法分析](https://docs.python.org/3/reference/lexical_analysis.html)部分完全沿袭 Python。
 
 ## Basic concepts
 
