@@ -8,7 +8,7 @@ categories:
 - Taichi 编程语言
 ---
 
-最近在 [crowdin](https://crowdin.com/project/taichi-programming-language) 协助翻译了 Taichi 文档中的 [Language Reference](https://docs.taichi-lang.org/docs/reference/) 一文，在这里做一些记录。
+最近在 [crowdin](https://crowdin.com/project/taichi-programming-language) 协助翻译了 Taichi 文档中的 [Language Reference](https://docs.taichi-lang.org/docs/reference/)，顺便贴在这里，内容做了一些微调。
 
 <!-- more -->
 

@@ -1,15 +1,15 @@
 ---
 title: 自制 C 编译器 - 04 - 改进错误信息
+toc: true
 date: 2022-08-02 22:15:00
 tags: 
 - chibicc
 - compiler
 categories: 
 - 自制 C 编译器
-toc: true
 ---
 
-我们目前制作的编译器，如果输入在语法上不正确，它只会笼统地告诉我们某处有错误。让我们在这一步解决这个问题，让编译器显示更加直观的错误消息。
+目前制作的编译器，如果输入在语法上不正确，它只会笼统地告诉我们某处有错误，但不能主动定位错误。因此，这一步的目标是让编译器显示更加直观的错误信息。
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ $ ./chibicc "1 + foo + 5" > tmp.s
 
 ## 错误显示函数
 
-我们将整个程序字符串保存在一个名为 user_input 的变量中，并定义一个新的错误显示函数，该函数接收指向字符串中间的指针。
+将整个程序字符串保存在一个名为 user_input 的变量中，并定义一个新的错误显示函数，该函数接收指向字符串中间的指针，输出错误定位信息。
 
 ```c
 char *user_input;
@@ -48,16 +48,12 @@ void error_at(char *loc, char *fmt, ...) {
 
 ## 测试
 
-对于生产级编译器，应该在输入中有错误时编写行为测试。但错误消息现在只是输出以帮助调试，因此我们不需要在此阶段编写任何测试。
+对于生产级编译器，应该在输入中有错误时编写行为测试。但目前错误消息只是输出以帮助调试，因此不需要在此阶段编写任何测试。
 
 ## 小结
 
 {% raw %}<article class="message is-info"><div class="message-body">{% endraw %}
-
 参考实现：
-
-- [f7a95db](https://github.com/zhifeng-essen/chibicc/commit/f7a95db926bc69bc28420ea0c91d18c692ab2386): 改进错误信息
-
 - [c6ff1d9](https://github.com/rui314/chibicc/commit/c6ff1d98a1419e69c31902447e2caa85af4e9844): Improve error message
-
+- [f7a95db](https://github.com/zhifeng-essen/chibicc/commit/f7a95db926bc69bc28420ea0c91d18c692ab2386): 改进错误信息
 {% raw %}</div></article>{% endraw %}

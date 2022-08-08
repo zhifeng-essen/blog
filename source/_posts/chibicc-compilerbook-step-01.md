@@ -1,17 +1,19 @@
 ---
 title: 自制 C 编译器 - 01 - 编译单个整数
+toc: true
 date: 2022-08-01 14:34:47
 tags: 
 - chibicc
 - compiler
 categories: 
 - 自制 C 编译器
-toc: true
 ---
 
-C 语言最简单的子集
+请考虑 C 语言最简单的子集，你认为它会是什么样的语言？是只有 `main` 函数的语言？抑或是只包含一个表达式的语言？
 
 <!-- more -->
+
+chibicc 的作者 Rui Ueyama 认为，只有一个整数的语言是他能想到的 C 语言最简单的子集。这个最简单的编译器，它支持程序从输入中读取一个数字，然后以该数字作为程序的退出码退出。
 
 ## 编译器主体
 
@@ -143,11 +145,7 @@ $ git push -u origin main
 这样就完成了创建编译器的第一步。虽然这一步我们实现的编译器是一个过于简单而很难称之为编译器的程序，但它是一个包含编译器所需的所有元素的好程序。从现在开始，我们将渐进地增强这个编译器，不管你信不信，它会成长为一个优秀的 C 编译器。
 
 {% raw %}<article class="message is-info"><div class="message-body">{% endraw %}
-
 参考实现：
-
-- [6a43fd2](https://github.com/zhifeng-essen/chibicc/commit/6a43fd2529abfa6c2ebd6d53fd0c54c39c312f12): 创建一个编译单个整数的编译器
-
 - [f722daa](https://github.com/rui314/chibicc/commit/f722daaaae0606115df4ace5a852da23c1a5b0f3): Compile an integer to an exectuable that exits with the given number
-
+- [6a43fd2](https://github.com/zhifeng-essen/chibicc/commit/6a43fd2529abfa6c2ebd6d53fd0c54c39c312f12): 创建一个编译单个整数的编译器
 {% raw %}</div></article>{% endraw %}
